@@ -45,7 +45,7 @@ Antes de começar, certifique-se de ter as bibliotecas necessárias instaladas n
 A ferramenta de upload do Arduino IDE permite que você envie arquivos para o sistema de arquivos SPIFFS do ESP8266.
 
 ### Upload dos Arquivos para o SPIFFS
-1. Coloque todos os arquivos HTML desejados (por exemplo, `home.html`, `login-page.html`, `post-login.html`) na pasta `data`.
+1. Os arquivos HTML( `home.html`, `login-page.html`, `post-login.html`) deverão ficar dentro da pasta `data`. Você pode utilizar a função `ctrl+k` para verificar a localização dos arquivos.
 
 2. Instale a Ferramenta de Upload do SPIFFS:
    - No Arduino IDE, vá para **Sketch -> Incluir Biblioteca -> Gerenciar Bibliotecas...**
@@ -66,19 +66,11 @@ A ferramenta de upload do Arduino IDE permite que você envie arquivos para o si
 
 1.  **Página Inicial (`/`):** Exibe uma mensagem de boas-vindas e um botão para redirecionar para a página de login.
 
-  
-
 2.  **Página de Login (`/login`):** Formulário de login para os usuários inserirem suas credenciais.
-
-  
 
 3.  **Página pós-login (`/post-login`):** Página exibida após o login bem-sucedido.
 
-  
-
 4.  **Página de Administração (`/admin`):** Página protegida por senha para visualizar as credenciais salvas.
-
-  
 
 ## Arquivos HTML
 
@@ -90,8 +82,6 @@ Os arquivos HTML são armazenados no sistema de arquivos SPIFFS do ESP8266. Cert
 
 -  **post-login.html:** Página pós-login.
 
-  
-
 ## Compilar e Carregar
 
 - Certifique-se de ter as bibliotecas necessárias instaladas.
@@ -100,16 +90,8 @@ Os arquivos HTML são armazenados no sistema de arquivos SPIFFS do ESP8266. Cert
 
 - Compile e carregue o código para o módulo ESP8266.
 
-  
-
 ## Notas Adicionais
 
 - Lembre-se de personalizar as mensagens, estilos e lógica conforme necessário.
 
 - Consulte a documentação da ESP8266 para obter informações detalhadas sobre o uso do sistema de arquivos SPIFFS.
-
-  
-
-## Autores
-
-[Seu Nome]
