@@ -1,36 +1,66 @@
-# Captive Portal WiFi - README
 
-## Descrição
-Este projeto consiste em um Captive Portal WiFi usando um módulo ESP8266. Ele permite que os dispositivos se conectem a uma rede WiFi simulada e, ao tentar acessar a internet, são redirecionados para uma página de login.
+Captive Portal WiFi - README
+Descrição
+Este projeto implementa um portal cativo WiFi usando um módulo ESP8266 (NodeMCU) e fornece uma maneira simples de conectar dispositivos à rede WiFi por meio de um portal de login.
 
-## Configurações Iniciais
-- **Endereço IP do Portal Cativo:** 172.217.28.1
+Configuração do Ambiente
+Bibliotecas Necessárias
+Certifique-se de ter as seguintes bibliotecas instaladas no seu ambiente de desenvolvimento Arduino:
 
-## Páginas e Funcionalidades
-1. **Página Inicial (`/`):** Exibe uma mensagem de boas-vindas e um botão para redirecionar para a página de login.
+ESP8266WiFi
+DNSServer
+ESP8266WebServer
+FS (Sistema de Arquivos SPIFFS)
+Upload dos Arquivos para o SPIFFS
+Pré-requisitos
+Antes de começar, certifique-se de ter as bibliotecas necessárias instaladas no seu ambiente de desenvolvimento Arduino, conforme mencionado anteriormente.
 
-2. **Página de Login (`/login`):** Formulário de login para os usuários inserirem suas credenciais.
+Ferramenta de Upload do Arduino IDE
+A ferramenta de upload do Arduino IDE permite que você envie arquivos para o sistema de arquivos SPIFFS do ESP8266.
 
-3. **Página pós-login (`/post-login`):** Página exibida após o login bem-sucedido.
+Preparando os Arquivos:
 
-4. **Página de Administração (`/admin`):** Página protegida por senha para visualizar as credenciais salvas.
+Coloque todos os arquivos HTML que deseja incluir (por exemplo, home.html, login-page.html, post-login.html) em um diretório.
+Instalando a Ferramenta de Upload do SPIFFS:
 
-## Arquivos HTML
-Os arquivos HTML são armazenados no sistema de arquivos SPIFFS do ESP8266. Certifique-se de incluir os seguintes arquivos:
-- **home.html:** Página inicial.
-- **login-page.html:** Página de login.
-- **post-login.html:** Página pós-login.
+No Arduino IDE, vá para Sketch -> Incluir Biblioteca -> Gerenciar Bibliotecas...
+Pesquise por "ESP8266FS" e instale.
+Carregando os Arquivos:
 
-## Compilar e Carregar
-- Certifique-se de ter as bibliotecas necessárias instaladas.
-- Configure as credenciais do administrador no código.
-- Compile e carregue o código para o módulo ESP8266.
+Após instalar a biblioteca, vá para Ferramentas -> ESP8266 Sketch Data Upload.
+A IDE começará a compilar e, em seguida, carregará os arquivos para o sistema de arquivos SPIFFS do ESP8266.
+Verificando o Status:
 
-## Notas Adicionais
-- Lembre-se de personalizar as mensagens, estilos e lógica conforme necessário.
-- Consulte a documentação da ESP8266 para obter informações detalhadas sobre o uso do sistema de arquivos SPIFFS.
+Verifique a janela de saída para garantir que o upload foi bem-sucedido.
+O status do upload e o tamanho total usado no SPIFFS serão exibidos na parte inferior da janela da IDE.
+Reiniciando o ESP8266:
 
-## Autores
-[Seu Nome]
+Após o upload dos arquivos, reinicie o ESP8266 para aplicar as alterações.
+Configuração do Portal Cativo
+Configurando as Credenciais da Rede WiFi:
+No código do Arduino, configure o nome (SSID) e a senha da sua rede WiFi.
 
----
+cpp
+Copy code
+WiFi.softAP("Wifi-Clientes", "sua_senha_wifi");
+Configurando as Credenciais de Admin:
+Defina um nome de usuário e senha para a página de administração (admin).
+
+cpp
+Copy code
+const char *adminUsername = "admin";
+const char *adminPassword = "admin123";
+Funcionalidades Principais
+Página Home:
+Acesse o portal inicial em http://esp8266.local/.
+Permite redirecionamento para a página de login.
+Página de Login:
+Acesse a página de login em http://esp8266.local/login.
+Simula um formulário de login básico.
+Página Pós-Login (Admin):
+Acesse a página após o login bem-sucedido em http://esp8266.local/admin.
+Exibe um histórico de credenciais inseridas.
+
+
+
+
