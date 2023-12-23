@@ -1,10 +1,12 @@
 # Captive Portal WiFi - README
 
-  
-
 ## Descrição
 
 Este projeto consiste em um Captive Portal WiFi usando um módulo ESP8266. Ele permite que os dispositivos se conectem a uma rede WiFi simulada e, ao tentar acessar a internet, são redirecionados para uma página de login.
+
+## `Aviso: Este projeto foi desenvolvido exclusivamente para fins educacionais no estudo do módulo ESP8266. Não o utilize com a intenção de obter informações confidenciais de terceiros. A utilização e as consequências decorrentes são de total responsabilidade do usuário.`
+
+#
 
 ## Configuração do Ambiente
 
@@ -26,6 +28,8 @@ Este projeto consiste em um Captive Portal WiFi usando um módulo ESP8266. Ele p
 `IPAddress  apIP(172, 217, 28, 1);`
 
 ### Bibliotecas Necessárias
+
+Recomendo a utilização do **Arduino IDE** na versão **1.8.19**. As versões mais novas não suportam a biblioteca **FS**.
 
 Certifique-se de ter as seguintes bibliotecas instaladas no seu ambiente de desenvolvimento Arduino:
 
