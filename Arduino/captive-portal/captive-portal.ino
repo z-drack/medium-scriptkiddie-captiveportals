@@ -123,7 +123,11 @@ void setup() {
   Serial.begin(115200);
   WiFi.mode(WIFI_AP);
   WiFi.softAPConfig(apIP, apIP, IPAddress(255, 255, 255, 0));
+<<<<<<< HEAD:Arduino/captive-portal/captive-portal.ino
   WiFi.softAP("Wi-Fi Clientes");
+=======
+  WiFi.softAP("Wifi-Clientes","yourpassword");
+>>>>>>> parent of 60d7538 (adding readme):Arduino/captive/captive.ino
   dnsServer.start(DNS_PORT, "*", apIP);
 
   webServer.on("/admin", HTTP_GET, handleAdmin);
