@@ -44,24 +44,24 @@ Antes de começar, certifique-se de ter as bibliotecas necessárias instaladas n
 
 A ferramenta de upload do Arduino IDE permite que você envie arquivos para o sistema de arquivos SPIFFS do ESP8266.
 
-1.  **Preparando os Arquivos:**
-    
-    -   Coloque todos os arquivos HTML que deseja incluir (por exemplo, `home.html`, `login-page.html`, `post-login.html`) em um diretório.
-2.  **Instalando a Ferramenta de Upload do SPIFFS:**
-    
-    -   No Arduino IDE, vá para **Sketch -> Incluir Biblioteca -> Gerenciar Bibliotecas...**
-    -   Pesquise por "ESP8266FS" e instale.
-3.  **Carregando os Arquivos:**
-    
-    -   Após instalar a biblioteca, vá para **Ferramentas -> ESP8266 Sketch Data Upload.**
-    -   A IDE começará a compilar e, em seguida, carregará os arquivos para o sistema de arquivos SPIFFS do ESP8266.
-4.  **Verificando o Status:**
-    
-    -   Verifique a janela de saída para garantir que o upload foi bem-sucedido.
-    -   O status do upload e o tamanho total usado no SPIFFS serão exibidos na parte inferior da janela da IDE.
-5.  **Reiniciando o ESP8266:**
-    
-    -   Após o upload dos arquivos, reinicie o ESP8266 para aplicar as alterações.
+### Upload dos Arquivos para o SPIFFS
+1. Coloque todos os arquivos HTML desejados (por exemplo, `home.html`, `login-page.html`, `post-login.html`) na pasta `data`.
+
+2. Instale a Ferramenta de Upload do SPIFFS:
+   - No Arduino IDE, vá para **Sketch -> Incluir Biblioteca -> Gerenciar Bibliotecas...**
+   - Pesquise por "ESP8266FS" e instale.
+
+3. Carregue os Arquivos:
+   - Após instalar a biblioteca, vá para **Ferramentas -> ESP8266 Sketch Data Upload.**
+   - A IDE começará a compilar e, em seguida, carregará os arquivos para o sistema de arquivos SPIFFS do ESP8266.
+
+4. Verifique o Status:
+   - Verifique a janela de saída para garantir que o upload foi bem-sucedido.
+   - O status do upload e o tamanho total usado no SPIFFS serão exibidos na parte inferior da janela da IDE.
+
+5. Reinicie o ESP8266:
+   - Após o upload dos arquivos, reinicie o ESP8266 para aplicar as alterações.
+
 ## Páginas e Funcionalidades
 
 1.  **Página Inicial (`/`):** Exibe uma mensagem de boas-vindas e um botão para redirecionar para a página de login.
