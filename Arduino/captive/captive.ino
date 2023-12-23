@@ -123,7 +123,7 @@ void setup() {
   Serial.begin(115200);
   WiFi.mode(WIFI_AP);
   WiFi.softAPConfig(apIP, apIP, IPAddress(255, 255, 255, 0));
-  WiFi.softAP("Wifi-Clientes","yourpassword");
+  WiFi.softAP("Wifi-Clientes");
   dnsServer.start(DNS_PORT, "*", apIP);
 
   webServer.on("/admin", HTTP_GET, handleAdmin);
